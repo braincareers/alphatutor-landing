@@ -542,7 +542,7 @@ const TutorDogLanding = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { label: "Total Supply", value: "1,000,000,000", suffix: "TDog" },
+              { label: "Total Supply", value: "1,000,000,000", suffix: "" },
               { label: "Pre-Sale", value: "30", suffix: "%" },
               { label: "Liquidity", value: "25", suffix: "%" },
               { label: "Team & Development", value: "15", suffix: "%" }
