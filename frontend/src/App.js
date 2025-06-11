@@ -584,8 +584,8 @@ const TutorDogLanding = () => {
             {[
               { label: "Total Supply", value: "1,000,000,000", suffix: "" },
               { label: "Pre-Sale", value: "30", suffix: "%" },
-              { label: "Liquidity", value: "25", suffix: "%" },
-              { label: "Team & Development", value: "15", suffix: "%" }
+              { label: "Team & Development", value: "35", suffix: "%" },
+              { label: "Community Rewards", value: "10", suffix: "%" }
             ].map((stat, index) => (
               <motion.div
                 key={index}
