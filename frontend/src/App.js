@@ -14,7 +14,17 @@ import {
   Clock,
   Coins,
   Target,
-  Zap
+  Zap,
+  CreditCard,
+  Wallet,
+  Award,
+  Star,
+  BarChart3,
+  CheckCircle,
+  ArrowRight,
+  Sparkles,
+  Brain,
+  Trophy
 } from 'lucide-react';
 import CountUp from 'react-countup';
 import './App.css';
@@ -78,92 +88,143 @@ const TutorDogLanding = () => {
           <div 
             className="w-full h-full bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.pexels.com/photos/14891563/pexels-photo-14891563.jpeg')`
+              backgroundImage: `linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.pexels.com/photos/14891563/pexels-photo-14891563.jpeg')`
             }}
           />
         </motion.div>
         
-        <div className="relative z-10 text-center px-4 max-w-6xl mx-auto">
+        <div className="relative z-10 text-center px-4 max-w-7xl mx-auto">
+          {/* Tutor Dog Logo */}
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="mb-8"
           >
-            <div className="w-32 h-32 mx-auto mb-6 rounded-full bg-gradient-to-br from-orange-400 to-amber-500 p-1">
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-orange-500 to-amber-600 flex items-center justify-center">
-                <GraduationCap size={64} className="text-white" />
+            <div className="w-48 h-48 mx-auto mb-8 relative">
+              <img 
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Ccircle cx='200' cy='200' r='180' fill='%23f97316'/%3E%3Cpath d='M120 160 L120 220 L140 240 L170 240 L170 220 L170 160 Z' fill='%23fbbf24'/%3E%3Cpath d='M230 160 L230 220 L250 240 L280 240 L280 220 L280 160 Z' fill='%23fbbf24'/%3E%3Ccircle cx='200' cy='180' r='60' fill='%23fbbf24'/%3E%3Ccircle cx='185' cy='170' r='8' fill='%23000'/%3E%3Ccircle cx='215' cy='170' r='8' fill='%23000'/%3E%3Cellipse cx='200' cy='190' rx='4' ry='6' fill='%23000'/%3E%3Cpath d='M190 205 Q200 215 210 205' stroke='%23000' stroke-width='3' fill='none'/%3E%3Cpath d='M160 120 L240 120 L250 100 L240 80 L160 80 L150 100 Z' fill='%23374151'/%3E%3Cpath d='M140 110 L150 100 L250 100 L260 110 L250 120 L150 120 Z' fill='%231f2937'/%3E%3Ccircle cx='200' cy='260' r='15' fill='%23fbbf24'/%3E%3Ctext x='200' y='270' text-anchor='middle' fill='%23000' font-size='14' font-weight='bold'%3ET%3C/text%3E%3C/svg%3E"
+                alt="Tutor Dog Token Logo"
+                className="w-full h-full object-contain drop-shadow-2xl"
+              />
+            </div>
+          </motion.div>
+          
+          {/* Enhanced Hero Text */}
+          <motion.div
+            {...fadeInUp}
+            className="mb-8"
+          >
+            <h1 className="text-6xl md:text-8xl font-black mb-4 relative">
+              <span className="bg-gradient-to-r from-orange-300 via-orange-400 to-amber-500 bg-clip-text text-transparent animate-gradient-x">
+                TUTOR DOG
+              </span>
+              <div className="absolute -top-4 -right-4 text-2xl animate-bounce">🎓</div>
+            </h1>
+            <div className="text-3xl md:text-4xl font-bold text-orange-400 mb-2">
+              $TDOG TOKEN
+            </div>
+          </motion.div>
+          
+          <motion.div
+            {...fadeInUp}
+            transition={{ delay: 0.2 }}
+            className="mb-8"
+          >
+            <div className="flex items-center justify-center gap-4 mb-4">
+              <Sparkles className="text-yellow-400 animate-pulse" size={24} />
+              <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+                Learn • Earn • Grow
+              </h2>
+              <Sparkles className="text-yellow-400 animate-pulse" size={24} />
+            </div>
+            <p className="text-lg md:text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              🚀 <strong>Revolutionizing Education Through Blockchain</strong> 🚀<br/>
+              Where Knowledge Meets Cryptocurrency - Earn $TDOG tokens while mastering new skills!
+            </p>
+          </motion.div>
+
+          {/* Last Chance to Buy Table */}
+          <motion.div
+            {...fadeInUp}
+            transition={{ delay: 0.4 }}
+            className="mb-12 max-w-2xl mx-auto"
+          >
+            <div className="bg-gradient-to-r from-red-900/40 to-orange-900/40 backdrop-blur-md rounded-2xl border-2 border-red-500/50 p-8 shadow-2xl">
+              <div className="text-center mb-6">
+                <h3 className="text-2xl md:text-3xl font-bold text-red-400 mb-2 animate-pulse">
+                  🔥 Last Chance to Buy $TDOG Token 🔥
+                </h3>
+                <p className="text-orange-300 font-semibold">Pre-Sale Ending Soon!</p>
+              </div>
+              
+              {/* Countdown */}
+              <div className="grid grid-cols-4 gap-3 mb-6">
+                {Object.entries(timeLeft).map(([unit, value]) => (
+                  <div key={unit} className="bg-black/40 backdrop-blur-md rounded-lg p-3 border border-red-500/30">
+                    <div className="text-xl md:text-2xl font-bold text-red-400">{value}</div>
+                    <div className="text-xs text-gray-400 capitalize">{unit}</div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Buy Options */}
+              <div className="grid md:grid-cols-2 gap-4 mb-4">
+                <motion.a
+                  href="https://pinksale.finance"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 px-6 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 transform hover:scale-105"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <CreditCard size={20} />
+                  Buy with Card
+                </motion.a>
+                
+                <motion.a
+                  href="https://pinksale.finance"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 px-6 py-4 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center gap-2 transform hover:scale-105"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Wallet size={20} />
+                  Buy with Crypto
+                </motion.a>
+              </div>
+
+              <div className="text-center text-sm text-gray-400">
+                Powered by <span className="text-orange-400 font-semibold">Web3Payments</span>
               </div>
             </div>
           </motion.div>
-          
-          <motion.h1
-            {...fadeInUp}
-            className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-orange-400 via-amber-500 to-orange-600 bg-clip-text text-transparent"
-          >
-            Tutor Dog Token
-          </motion.h1>
-          
-          <motion.h2
-            {...fadeInUp}
-            transition={{ delay: 0.2 }}
-            className="text-2xl md:text-3xl font-semibold mb-8 text-gray-300"
-          >
-            The Future of Educational Crypto
-          </motion.h2>
-          
-          <motion.p
-            {...fadeInUp}
-            transition={{ delay: 0.4 }}
-            className="text-lg md:text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed"
-          >
-            Revolutionizing education through blockchain technology. Earn, learn, and grow with TDog - where knowledge meets cryptocurrency.
-          </motion.p>
 
-          {/* Countdown Timer */}
+          {/* Main CTA */}
           <motion.div
             {...fadeInUp}
             transition={{ delay: 0.6 }}
-            className="mb-12"
-          >
-            <h3 className="text-xl font-semibold mb-6 text-orange-400">Token Launch Countdown</h3>
-            <div className="grid grid-cols-4 gap-4 max-w-md mx-auto">
-              {Object.entries(timeLeft).map(([unit, value]) => (
-                <div key={unit} className="bg-black/30 backdrop-blur-md rounded-lg p-4 border border-orange-500/20">
-                  <div className="text-2xl md:text-3xl font-bold text-white">{value}</div>
-                  <div className="text-sm text-gray-400 capitalize">{unit}</div>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* CTA Buttons */}
-          <motion.div
-            {...fadeInUp}
-            transition={{ delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <motion.a
-              href="https://pinksale.finance"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/25 flex items-center gap-2"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Zap size={20} />
-              Buy Pre-Sale Now
-              <ExternalLink size={16} />
-            </motion.a>
-            
-            <motion.a
-              href="#whitepaper"
+              href="#what-is-tdog"
               className="border-2 border-orange-500 hover:bg-orange-500/10 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 flex items-center gap-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
+              <ArrowRight size={20} />
+              Learn More About $TDOG
+            </motion.a>
+            
+            <motion.a
+              href="#whitepaper"
+              className="border-2 border-amber-500 hover:bg-amber-500/10 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 flex items-center gap-2"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               <Download size={20} />
-              Download Whitepaper
+              Whitepaper
             </motion.a>
           </motion.div>
         </div>
@@ -178,7 +239,108 @@ const TutorDogLanding = () => {
         </motion.div>
       </section>
 
-      {/* About Section */}
+      {/* What is $TDOG Section */}
+      <section id="what-is-tdog" className="py-20 px-4 relative">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="text-center mb-16"
+          >
+            <motion.h2 
+              variants={fadeInUp}
+              className="text-4xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-transparent"
+            >
+              What is $TDOG?
+            </motion.h2>
+            <motion.div 
+              variants={fadeInUp}
+              className="bg-black/20 backdrop-blur-md rounded-2xl p-8 border border-orange-500/20 max-w-4xl mx-auto"
+            >
+              <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
+                <strong className="text-orange-400">TDOG ($TDOG)</strong> is a platform-bound utility token designed by the <strong className="text-amber-400">AlphaTutor Research Group</strong> to power personalized education. It incentivizes students, rewards top content creators, and unlocks premium learning features through tokenized micro-payments and earned achievements.
+              </p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Token Specifications & Utility */}
+      <section className="py-20 px-4 relative">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12">
+            
+            {/* Token Specifications */}
+            <motion.div
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              className="bg-black/20 backdrop-blur-md rounded-2xl p-8 border border-gray-800"
+            >
+              <h3 className="text-3xl font-bold mb-6 text-orange-400 flex items-center gap-3">
+                <Coins size={32} />
+                Token Specifications
+              </h3>
+              <div className="space-y-4">
+                <div className="flex justify-between items-center border-b border-gray-700 pb-2">
+                  <span className="text-gray-400">Name:</span>
+                  <span className="text-white font-semibold">TDog – Tutor Dog Token</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-gray-700 pb-2">
+                  <span className="text-gray-400">Symbol:</span>
+                  <span className="text-orange-400 font-bold">$TDOG</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-gray-700 pb-2">
+                  <span className="text-gray-400">Type:</span>
+                  <span className="text-white font-semibold">ERC-20 Utility Token</span>
+                </div>
+                <div className="flex justify-between items-center border-b border-gray-700 pb-2">
+                  <span className="text-gray-400">Max Supply:</span>
+                  <span className="text-amber-400 font-bold">1,000,000,000 $TDOG</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-gray-400">Network:</span>
+                  <span className="text-white font-semibold">Ethereum</span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Token Utility */}
+            <motion.div
+              initial="initial"
+              whileInView="animate"
+              viewport={{ once: true }}
+              variants={fadeInUp}
+              className="bg-black/20 backdrop-blur-md rounded-2xl p-8 border border-gray-800"
+            >
+              <h3 className="text-3xl font-bold mb-6 text-amber-400 flex items-center gap-3">
+                <Zap size={32} />
+                Token Utility
+              </h3>
+              <div className="space-y-4">
+                {[
+                  { icon: <GraduationCap size={20} />, text: "Pay for tutoring sessions" },
+                  { icon: <BookOpen size={20} />, text: "Access premium study materials" },
+                  { icon: <Star size={20} />, text: "Tip top-rated educational content creators" },
+                  { icon: <Trophy size={20} />, text: "Earn rewards for achievements and consistency" }
+                ].map((utility, index) => (
+                  <div key={index} className="flex items-center gap-4 p-4 bg-gradient-to-r from-orange-500/10 to-amber-500/10 rounded-xl border border-orange-500/20">
+                    <div className="text-orange-400 flex-shrink-0">
+                      {utility.icon}
+                    </div>
+                    <span className="text-gray-300 font-medium">{utility.text}</span>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Research-Backed Benefits */}
       <section className="py-20 px-4 relative">
         <div className="max-w-6xl mx-auto">
           <motion.div
@@ -190,7 +352,95 @@ const TutorDogLanding = () => {
           >
             <motion.h2 
               variants={fadeInUp}
-              className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-transparent"
+              className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
+            >
+              Research-Backed Benefits
+            </motion.h2>
+            <motion.p 
+              variants={fadeInUp}
+              className="text-xl text-gray-400 max-w-3xl mx-auto mb-12"
+            >
+              Studies from <strong className="text-blue-400">Harvard</strong> and <strong className="text-purple-400">Stanford</strong> show tokenized rewards improve retention, confidence, and course completion rates.
+            </motion.p>
+          </motion.div>
+
+          <motion.div
+            variants={fadeInUp}
+            className="bg-gradient-to-r from-blue-900/20 to-purple-900/20 backdrop-blur-md rounded-2xl p-8 border border-blue-500/20"
+          >
+            <h3 className="text-2xl font-bold mb-8 text-center text-blue-400">Course Completion Impact</h3>
+            
+            {/* Enhanced Chart Visualization */}
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="space-y-6">
+                <div>
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-gray-300 font-semibold">No Tokens</span>
+                    <span className="text-red-400 font-bold">35%</span>
+                  </div>
+                  <div className="w-full bg-gray-700 rounded-full h-4">
+                    <motion.div 
+                      className="bg-gradient-to-r from-red-500 to-red-600 h-4 rounded-full"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: '35%' }}
+                      transition={{ duration: 1.5, delay: 0.5 }}
+                    />
+                  </div>
+                </div>
+                
+                <div>
+                  <div className="flex justify-between items-center mb-2">
+                    <span className="text-gray-300 font-semibold">With $TDOG</span>
+                    <span className="text-green-400 font-bold">87%</span>
+                  </div>
+                  <div className="w-full bg-gray-700 rounded-full h-4">
+                    <motion.div 
+                      className="bg-gradient-to-r from-green-500 to-emerald-500 h-4 rounded-full"
+                      initial={{ width: 0 }}
+                      whileInView={{ width: '87%' }}
+                      transition={{ duration: 2, delay: 1 }}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                {[
+                  { label: "Retention Rate", value: "+150%", icon: <Brain size={24} /> },
+                  { label: "Confidence Boost", value: "+200%", icon: <Trophy size={24} /> },
+                  { label: "Engagement", value: "+180%", icon: <Target size={24} /> },
+                  { label: "Skill Mastery", value: "+165%", icon: <Award size={24} /> }
+                ].map((stat, index) => (
+                  <div key={index} className="bg-black/30 backdrop-blur-md rounded-xl p-4 text-center border border-green-500/20">
+                    <div className="text-green-400 mb-2 flex justify-center">
+                      {stat.icon}
+                    </div>
+                    <div className="text-2xl font-bold text-green-400 mb-1">
+                      <CountUp end={parseInt(stat.value.replace(/[+%]/g, ''))} duration={2.5} prefix="+" suffix="%" />
+                    </div>
+                    <div className="text-xs text-gray-400">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Why Tutor Dog Token Section */}
+      <section className="py-20 px-4 relative">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+            variants={staggerContainer}
+            className="text-center mb-16"
+          >
+            <motion.h2 
+              variants={fadeInUp}
+              className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-transparent leading-tight"
+              style={{ lineHeight: '1.2' }}
             >
               Why Tutor Dog Token?
             </motion.h2>
