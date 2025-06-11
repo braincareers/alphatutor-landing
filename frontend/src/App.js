@@ -851,7 +851,8 @@ const TutorDogLanding = () => {
           
           <div className="border-t border-gray-800 pt-8 text-center">
             <p className="text-gray-400">
-              © 2025 Tutor Dog Token. All rights reserved. Built with education and innovation in mind.
+              © 2025 Tutor Dog Token. All rights reserved. Built with education and innovation in mind.<br/>
+              <span className="text-orange-400">Contact: research@alphatutor.ai</span>
             </p>
           </div>
         </div>
