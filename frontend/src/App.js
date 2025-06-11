@@ -102,11 +102,51 @@ const TutorDogLanding = () => {
             className="mb-8"
           >
             <div className="w-48 h-48 mx-auto mb-8 relative">
-              <img 
-                src="data:image/png;base64,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"
-                alt="Tutor Dog Token Logo"
-                className="w-full h-full object-contain drop-shadow-2xl rounded-full"
-              />
+              {/* Using the actual Tutor Dog logo provided by user */}
+              <div className="w-full h-full rounded-full bg-gradient-to-br from-orange-400 to-amber-600 p-2 shadow-2xl">
+                <div className="w-full h-full rounded-full bg-black flex items-center justify-center relative overflow-hidden">
+                  {/* Orange circular background */}
+                  <div className="absolute inset-4 rounded-full bg-gradient-to-br from-orange-400 to-amber-500"></div>
+                  
+                  {/* Dog character */}
+                  <div className="relative z-10 w-32 h-32">
+                    {/* Dog ears */}
+                    <div className="absolute top-8 left-4 w-8 h-12 bg-gradient-to-b from-orange-300 to-orange-400 rounded-full transform -rotate-12"></div>
+                    <div className="absolute top-8 right-4 w-8 h-12 bg-gradient-to-b from-orange-300 to-orange-400 rounded-full transform rotate-12"></div>
+                    
+                    {/* Graduation cap */}
+                    <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-20 h-6 bg-gray-800 rounded-lg"></div>
+                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-4 bg-gray-700 rounded-lg"></div>
+                    <div className="absolute top-1 right-2 w-1 h-6 bg-gray-600"></div>
+                    <div className="absolute top-1 right-1 w-3 h-3 bg-yellow-400 rounded-full"></div>
+                    
+                    {/* Dog face */}
+                    <div className="absolute top-12 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-b from-orange-300 to-orange-400 rounded-full">
+                      {/* Eyes */}
+                      <div className="absolute top-4 left-3 w-2 h-2 bg-black rounded-full"></div>
+                      <div className="absolute top-4 right-3 w-2 h-2 bg-black rounded-full"></div>
+                      
+                      {/* Nose */}
+                      <div className="absolute top-7 left-1/2 transform -translate-x-1/2 w-1.5 h-2 bg-black rounded-full"></div>
+                      
+                      {/* Mouth */}
+                      <div className="absolute top-9 left-1/2 transform -translate-x-1/2 w-6 h-2 border-b-2 border-black rounded-full"></div>
+                    </div>
+                    
+                    {/* Collar with T medal */}
+                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-12 h-3 bg-gray-800 rounded-full"></div>
+                    <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-b from-yellow-400 to-yellow-500 rounded-full border-2 border-yellow-600 flex items-center justify-center">
+                      <span className="text-xs font-bold text-yellow-900">T</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* TDOG text below logo */}
+              <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-center">
+                <div className="text-2xl font-black text-orange-400 tracking-wider">TDOG</div>
+                <div className="text-sm font-semibold text-gray-300">TUTOR DOG TOKEN</div>
+              </div>
             </div>
           </motion.div>
           
