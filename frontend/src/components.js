@@ -14,19 +14,19 @@ export const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-              <span className="text-white font-bold text-lg">K</span>
+            <div className="w-8 h-8 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center">
+              <span className="text-white font-bold text-lg">α</span>
             </div>
-            <span className="text-xl font-bold text-gray-900">Khan Academy</span>
+            <span className="text-xl font-bold text-gray-900">AlphaTutor.ai</span>
           </Link>
 
           {/* Navigation Links */}
           <nav className="hidden md:flex space-x-8">
-            <Link to="/math" className="text-gray-700 hover:text-green-600 font-medium">Math</Link>
-            <Link to="/science" className="text-gray-700 hover:text-green-600 font-medium">Science</Link>
-            <Link to="/computing" className="text-gray-700 hover:text-green-600 font-medium">Computing</Link>
-            <Link to="/arts" className="text-gray-700 hover:text-green-600 font-medium">Arts & Humanities</Link>
-            <Link to="/economics" className="text-gray-700 hover:text-green-600 font-medium">Economics</Link>
+            <Link to="/math" className="text-gray-700 hover:text-purple-600 font-medium">Math</Link>
+            <Link to="/science" className="text-gray-700 hover:text-purple-600 font-medium">Science</Link>
+            <Link to="/computing" className="text-gray-700 hover:text-purple-600 font-medium">Computing</Link>
+            <Link to="/arts" className="text-gray-700 hover:text-purple-600 font-medium">Arts & Humanities</Link>
+            <Link to="/economics" className="text-gray-700 hover:text-purple-600 font-medium">Economics</Link>
           </nav>
 
           {/* Search Bar */}
@@ -34,10 +34,10 @@ export const Header = () => {
             <div className="relative w-full">
               <input
                 type="text"
-                placeholder="Search for courses, topics, etc."
+                placeholder="Ask AI tutor anything..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
               />
               <svg className="absolute right-3 top-2.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -51,7 +51,7 @@ export const Header = () => {
               <div className="relative">
                 <button
                   onClick={() => setShowProfileMenu(!showProfileMenu)}
-                  className="flex items-center space-x-2 text-gray-700 hover:text-green-600"
+                  className="flex items-center space-x-2 text-gray-700 hover:text-purple-600"
                 >
                   <img src={user.avatar} alt={user.name} className="w-8 h-8 rounded-full" />
                   <span className="hidden md:block">{user.name}</span>
@@ -68,15 +68,15 @@ export const Header = () => {
               <div className="flex space-x-2">
                 <button
                   onClick={() => setShowLoginModal(true)}
-                  className="px-4 py-2 text-green-600 hover:text-green-700 font-medium"
+                  className="px-4 py-2 text-purple-600 hover:text-purple-700 font-medium"
                 >
                   Login
                 </button>
                 <button
                   onClick={() => setShowSignupModal(true)}
-                  className="px-4 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 font-medium"
+                  className="px-4 py-2 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-md hover:from-purple-700 hover:to-blue-700 font-medium"
                 >
-                  Sign up
+                  Start Learning
                 </button>
               </div>
             )}
@@ -94,31 +94,77 @@ export const Homepage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-green-400 to-green-600 text-white py-20">
+      <section className="bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-5xl font-bold mb-6">
-                For every student, every classroom. Real results.
+                AI-Powered Ultra-Personalized Learning
               </h1>
               <p className="text-xl mb-8 opacity-90">
-                We're a nonprofit with the mission to provide a free, world-class education for anyone, anywhere.
+                AlphaTutor.ai combines real-time cognitive adaptation with advanced AI to deliver personalized education. Master anything, anytime with automated micro-course generation and structured test prep.
               </p>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                <button className="bg-white text-green-600 px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
-                  {user ? 'Continue Learning' : 'Learners start here'}
+                <button className="bg-white text-purple-600 px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
+                  {user ? 'Continue Your Journey' : 'Start AI Tutoring'}
                 </button>
-                <button className="border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-green-600 transition-colors">
-                  Teachers start here
+                <button className="border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-purple-600 transition-colors">
+                  Explore Test Prep
                 </button>
+              </div>
+              <div className="mt-8 flex items-center space-x-6 text-sm opacity-80">
+                <div className="flex items-center space-x-2">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <span>AI Tutor Online</span>
+                </div>
+                <div>SAT • GRE • LSAT Prep</div>
+                <div>Custom Courses</div>
               </div>
             </div>
             <div>
               <img 
                 src="https://images.unsplash.com/photo-1632830049084-308fd151d8ae" 
-                alt="Student learning" 
+                alt="AI-powered learning" 
                 className="rounded-lg shadow-xl"
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AI Features Section */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            Powered by Advanced AI Technology
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Real-Time Adaptation</h3>
+              <p className="text-gray-600">AI continuously adapts to your learning style and pace</p>
+            </div>
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Automated Course Generation</h3>
+              <p className="text-gray-600">Instantly create micro-courses on any topic you want to learn</p>
+            </div>
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Test Prep Excellence</h3>
+              <p className="text-gray-600">Structured preparation for SAT, GRE, LSAT and more</p>
             </div>
           </div>
         </div>
@@ -128,7 +174,7 @@ export const Homepage = () => {
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
-            Learn by subject
+            Learn Any Subject with AI Guidance
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {subjects.map((subject) => (
@@ -139,20 +185,20 @@ export const Homepage = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="bg-green-50 py-16">
+      <section className="bg-gradient-to-r from-purple-50 to-blue-50 py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-green-600 mb-2">120M+</div>
-              <div className="text-gray-700">Learners worldwide</div>
+              <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">2M+</div>
+              <div className="text-gray-700">Students Powered by AI</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-green-600 mb-2">70+</div>
-              <div className="text-gray-700">Languages supported</div>
+              <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">95%</div>
+              <div className="text-gray-700">Test Score Improvement</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-green-600 mb-2">100%</div>
-              <div className="text-gray-700">Free forever</div>
+              <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">24/7</div>
+              <div className="text-gray-700">AI Tutor Availability</div>
             </div>
           </div>
         </div>
@@ -166,7 +212,7 @@ const SubjectCard = ({ subject }) => {
   return (
     <Link 
       to={subject.path} 
-      className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 group"
+      className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 group border border-gray-200 hover:border-purple-200"
     >
       <div className="aspect-w-16 aspect-h-9 mb-4">
         <img 
@@ -177,8 +223,13 @@ const SubjectCard = ({ subject }) => {
       </div>
       <h3 className="text-xl font-semibold mb-2 text-gray-900">{subject.name}</h3>
       <p className="text-gray-600 mb-4">{subject.description}</p>
-      <div className="text-green-600 font-medium">
-        {subject.courseCount} courses →
+      <div className="flex justify-between items-center">
+        <span className="text-purple-600 font-medium">
+          {subject.courseCount} AI Courses →
+        </span>
+        <div className="bg-gradient-to-r from-purple-100 to-blue-100 px-2 py-1 rounded-full text-xs font-medium text-purple-700">
+          AI Powered
+        </div>
       </div>
     </Link>
   );
@@ -190,7 +241,7 @@ const subjects = [
     id: 'math',
     name: 'Math',
     path: '/math',
-    description: 'Algebra, geometry, trigonometry, precalculus, calculus, statistics, and more.',
+    description: 'AI-guided algebra, geometry, calculus, and statistics with personalized learning paths.',
     image: 'https://images.unsplash.com/photo-1573871014706-263f4dfec410',
     courseCount: 15
   },
@@ -198,7 +249,7 @@ const subjects = [
     id: 'science',
     name: 'Science',
     path: '/science',
-    description: 'Biology, chemistry, physics, earth science, and more.',
+    description: 'Interactive biology, chemistry, physics with AI-generated experiments and explanations.',
     image: 'https://images.pexels.com/photos/5450873/pexels-photo-5450873.jpeg',
     courseCount: 12
   },
@@ -206,7 +257,7 @@ const subjects = [
     id: 'computing',
     name: 'Computing',
     path: '/computing',
-    description: 'Programming, computer science principles, and algorithms.',
+    description: 'AI-assisted programming, algorithms, and computer science with real-time feedback.',
     image: 'https://images.pexels.com/photos/9784250/pexels-photo-9784250.jpeg',
     courseCount: 8
   },
@@ -214,15 +265,15 @@ const subjects = [
     id: 'arts',
     name: 'Arts & Humanities',
     path: '/arts',
-    description: 'World history, art history, grammar, and more.',
+    description: 'AI-enhanced history, literature, and cultural studies with immersive learning.',
     image: 'https://images.unsplash.com/photo-1697992350218-f0852fcc95ba',
     courseCount: 10
   },
   {
     id: 'economics',
-    name: 'Economics',
+    name: 'Economics & Test Prep',
     path: '/economics',
-    description: 'Microeconomics, macroeconomics, and finance.',
+    description: 'Economics fundamentals plus SAT, GRE, LSAT prep with AI-powered practice.',
     image: 'https://images.pexels.com/photos/6289058/pexels-photo-6289058.jpeg',
     courseCount: 6
   }
@@ -233,7 +284,7 @@ export const MathPage = () => {
   return (
     <SubjectPage 
       subject="Math"
-      description="Build a strong foundation in math with courses from basic arithmetic to advanced calculus."
+      description="Build mathematical mastery with AI-powered personalized learning paths from basic arithmetic to advanced calculus."
       courses={mathCourses}
       bgColor="bg-blue-50"
       textColor="text-blue-600"
@@ -246,7 +297,7 @@ export const SciencePage = () => {
   return (
     <SubjectPage 
       subject="Science"
-      description="Explore the natural world through biology, chemistry, physics, and earth science."
+      description="Explore scientific concepts with AI-generated experiments and adaptive learning through biology, chemistry, and physics."
       courses={scienceCourses}
       bgColor="bg-purple-50"
       textColor="text-purple-600"
@@ -259,7 +310,7 @@ export const ComputingPage = () => {
   return (
     <SubjectPage 
       subject="Computing"
-      description="Learn programming, computer science principles, and algorithms."
+      description="Master programming and computer science with AI tutoring, real-time code feedback, and personalized challenges."
       courses={computingCourses}
       bgColor="bg-indigo-50"
       textColor="text-indigo-600"
@@ -272,7 +323,7 @@ export const ArtsPage = () => {
   return (
     <SubjectPage 
       subject="Arts & Humanities"
-      description="Dive into world history, art history, grammar, and cultural studies."
+      description="Dive deep into history, literature, and culture with AI-enhanced immersive learning experiences."
       courses={artsCourses}
       bgColor="bg-pink-50"
       textColor="text-pink-600"
@@ -284,8 +335,8 @@ export const ArtsPage = () => {
 export const EconomicsPage = () => {
   return (
     <SubjectPage 
-      subject="Economics"
-      description="Understand economic principles, markets, and financial systems."
+      subject="Economics & Test Prep"
+      description="Master economic principles and excel in standardized tests with AI-powered preparation for SAT, GRE, LSAT and more."
       courses={economicsCourses}
       bgColor="bg-yellow-50"
       textColor="text-yellow-600"
@@ -301,6 +352,10 @@ const SubjectPage = ({ subject, description, courses, bgColor, textColor }) => {
     <div className="min-h-screen bg-gray-50">
       <div className={`${bgColor} py-16`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center space-x-2 mb-4">
+            <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+            <span className="text-sm text-gray-600">AI Tutor Active</span>
+          </div>
           <h1 className="text-4xl font-bold text-gray-900 mb-4">{subject}</h1>
           <p className="text-xl text-gray-700 max-w-3xl">{description}</p>
         </div>
@@ -328,7 +383,7 @@ const CourseCard = ({ course, subject, progress, textColor }) => {
   return (
     <Link 
       to={`/course/${subject}/${course.id}`}
-      className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden group"
+      className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow overflow-hidden group border border-gray-200 hover:border-purple-200"
     >
       <div className="aspect-w-16 aspect-h-9">
         <img 
@@ -338,13 +393,18 @@ const CourseCard = ({ course, subject, progress, textColor }) => {
         />
       </div>
       <div className="p-6">
-        <h3 className="text-xl font-semibold mb-2 text-gray-900">{course.title}</h3>
+        <div className="flex items-center justify-between mb-2">
+          <h3 className="text-xl font-semibold text-gray-900">{course.title}</h3>
+          <div className="bg-gradient-to-r from-purple-100 to-blue-100 px-2 py-1 rounded-full text-xs font-medium text-purple-700">
+            AI
+          </div>
+        </div>
         <p className="text-gray-600 mb-4">{course.description}</p>
         
         {progress > 0 && (
           <div className="mb-4">
             <div className="flex justify-between text-sm mb-1">
-              <span className="text-gray-600">Progress</span>
+              <span className="text-gray-600">AI-Tracked Progress</span>
               <span className={textColor}>{progress}%</span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-2">
@@ -357,7 +417,7 @@ const CourseCard = ({ course, subject, progress, textColor }) => {
         )}
         
         <div className="flex justify-between items-center">
-          <span className="text-sm text-gray-500">{course.lessons} lessons</span>
+          <span className="text-sm text-gray-500">{course.lessons} AI lessons</span>
           <span className={`${textColor} font-medium`}>{course.level}</span>
         </div>
       </div>
@@ -369,8 +429,8 @@ const CourseCard = ({ course, subject, progress, textColor }) => {
 const mathCourses = [
   {
     id: 'basic-algebra',
-    title: 'Basic Algebra',
-    description: 'Learn the fundamentals of algebraic expressions, equations, and problem-solving.',
+    title: 'AI Algebra Mastery',
+    description: 'Personalized algebra learning with AI tutoring and adaptive problem generation.',
     thumbnail: 'https://images.unsplash.com/photo-1509228468518-180dd4864904?w=400&h=300&fit=crop',
     lessons: 24,
     level: 'Beginner',
@@ -378,8 +438,8 @@ const mathCourses = [
   },
   {
     id: 'geometry',
-    title: 'Geometry',
-    description: 'Explore shapes, angles, area, volume, and geometric proofs.',
+    title: 'Interactive AI Geometry',
+    description: 'Visual geometry learning with AI-generated proofs and interactive demonstrations.',
     thumbnail: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=400&h=300&fit=crop',
     lessons: 32,
     level: 'Intermediate',
@@ -387,8 +447,8 @@ const mathCourses = [
   },
   {
     id: 'calculus',
-    title: 'Calculus',
-    description: 'Master limits, derivatives, integrals, and their applications.',
+    title: 'Advanced AI Calculus',
+    description: 'Master calculus with AI-powered step-by-step solutions and real-time feedback.',
     thumbnail: 'https://images.unsplash.com/photo-1596495577886-d920f1fb7238?w=400&h=300&fit=crop',
     lessons: 45,
     level: 'Advanced',
@@ -399,8 +459,8 @@ const mathCourses = [
 const scienceCourses = [
   {
     id: 'biology-basics',
-    title: 'Biology Basics',
-    description: 'Introduction to cells, genetics, evolution, and ecosystems.',
+    title: 'AI Biology Explorer',
+    description: 'Interactive biology with AI-generated virtual labs and personalized learning paths.',
     thumbnail: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop',
     lessons: 28,
     level: 'Beginner',
@@ -408,8 +468,8 @@ const scienceCourses = [
   },
   {
     id: 'chemistry',
-    title: 'Chemistry',
-    description: 'Atoms, molecules, chemical reactions, and the periodic table.',
+    title: 'Smart Chemistry Lab',
+    description: 'AI-powered chemistry with virtual experiments and personalized reaction analysis.',
     thumbnail: 'https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=400&h=300&fit=crop',
     lessons: 35,
     level: 'Intermediate',
@@ -417,8 +477,8 @@ const scienceCourses = [
   },
   {
     id: 'physics',
-    title: 'Physics',
-    description: 'Motion, forces, energy, waves, and the fundamental laws of nature.',
+    title: 'AI Physics Mastery',
+    description: 'Advanced physics concepts with AI simulations and adaptive problem solving.',
     thumbnail: 'https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=400&h=300&fit=crop',
     lessons: 42,
     level: 'Advanced',
@@ -429,8 +489,8 @@ const scienceCourses = [
 const computingCourses = [
   {
     id: 'intro-programming',
-    title: 'Intro to Programming',
-    description: 'Learn the basics of programming with JavaScript.',
+    title: 'AI Programming Mentor',
+    description: 'Learn programming with AI code review, suggestions, and personalized challenges.',
     thumbnail: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop',
     lessons: 20,
     level: 'Beginner',
@@ -438,8 +498,8 @@ const computingCourses = [
   },
   {
     id: 'algorithms',
-    title: 'Algorithms',
-    description: 'Data structures, sorting, searching, and algorithm analysis.',
+    title: 'Smart Algorithm Design',
+    description: 'Master algorithms with AI-generated problems and real-time optimization feedback.',
     thumbnail: 'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=400&h=300&fit=crop',
     lessons: 30,
     level: 'Intermediate',
@@ -450,8 +510,8 @@ const computingCourses = [
 const artsCourses = [
   {
     id: 'world-history',
-    title: 'World History',
-    description: 'From ancient civilizations to modern times.',
+    title: 'AI History Journey',
+    description: 'Immersive world history with AI-generated scenarios and personalized timelines.',
     thumbnail: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=400&h=300&fit=crop',
     lessons: 38,
     level: 'Beginner',
@@ -462,8 +522,8 @@ const artsCourses = [
 const economicsCourses = [
   {
     id: 'microeconomics',
-    title: 'Microeconomics',
-    description: 'Supply and demand, market structures, and consumer behavior.',
+    title: 'Smart Economics & SAT Prep',
+    description: 'Economics mastery combined with AI-powered SAT, GRE, and LSAT preparation.',
     thumbnail: 'https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=400&h=300&fit=crop',
     lessons: 25,
     level: 'Intermediate',
@@ -484,7 +544,7 @@ export const CourseDetailPage = () => {
       science: scienceCourses,
       computing: computingCourses,
       'arts-humanities': artsCourses,
-      economics: economicsCourses
+      'economics-test-prep': economicsCourses
     };
     
     const subjectCourses = allCourses[subject] || [];
@@ -497,7 +557,7 @@ export const CourseDetailPage = () => {
     return <div className="min-h-screen bg-gray-50 flex items-center justify-center">
       <div className="text-center">
         <h2 className="text-2xl font-bold text-gray-900 mb-4">Course not found</h2>
-        <Link to="/" className="text-green-600 hover:text-green-700">← Back to home</Link>
+        <Link to="/" className="text-purple-600 hover:text-purple-700">← Back to home</Link>
       </div>
     </div>;
   }
@@ -516,9 +576,13 @@ export const CourseDetailPage = () => {
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
-          <Link to={`/${subject}`} className="text-green-600 hover:text-green-700 mb-4 inline-block">
+          <Link to={`/${subject}`} className="text-purple-600 hover:text-purple-700 mb-4 inline-block">
             ← Back to {subject}
           </Link>
+          <div className="flex items-center space-x-2 mb-4">
+            <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+            <span className="text-sm text-gray-600">AI Tutor Ready</span>
+          </div>
           <h1 className="text-3xl font-bold text-gray-900 mb-4">{course.title}</h1>
           <p className="text-xl text-gray-700">{course.description}</p>
         </div>
@@ -538,20 +602,26 @@ export const CourseDetailPage = () => {
               </div>
               <div className="p-6">
                 <h2 className="text-xl font-semibold mb-4">
-                  Lesson {currentLesson + 1}: {course.title} Fundamentals
+                  AI Lesson {currentLesson + 1}: {course.title} Fundamentals
                 </h2>
+                <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-4 rounded-lg mb-4">
+                  <p className="text-sm text-gray-700">
+                    <strong>AI Insight:</strong> Based on your learning pattern, this lesson is optimized for your current skill level. 
+                    The AI has adapted the content complexity to match your progress.
+                  </p>
+                </div>
                 <div className="flex space-x-4">
                   <button
                     onClick={handleLessonComplete}
-                    className="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700"
+                    className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-md hover:from-purple-700 hover:to-blue-700"
                   >
-                    {currentLesson < course.lessons - 1 ? 'Next Lesson' : 'Complete Course'}
+                    {currentLesson < course.lessons - 1 ? 'Next AI Lesson' : 'Complete Course'}
                   </button>
                   <Link
                     to={`/practice/${subject}/${courseId}`}
-                    className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700"
+                    className="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700"
                   >
-                    Practice
+                    AI Practice
                   </Link>
                 </div>
               </div>
@@ -560,19 +630,22 @@ export const CourseDetailPage = () => {
 
           {/* Course Progress Sidebar */}
           <div className="bg-white rounded-lg shadow-md p-6">
-            <h3 className="text-lg font-semibold mb-4">Course Progress</h3>
+            <h3 className="text-lg font-semibold mb-4">AI Learning Progress</h3>
             
             {user && (
               <div className="mb-6">
                 <div className="flex justify-between text-sm mb-2">
-                  <span>Overall Progress</span>
+                  <span>AI-Tracked Progress</span>
                   <span>{Math.round(((currentLesson + 1) / course.lessons) * 100)}%</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2">
                   <div 
-                    className="bg-green-600 h-2 rounded-full transition-all"
+                    className="bg-gradient-to-r from-purple-600 to-blue-600 h-2 rounded-full transition-all"
                     style={{ width: `${((currentLesson + 1) / course.lessons) * 100}%` }}
                   ></div>
+                </div>
+                <div className="mt-2 text-xs text-gray-500">
+                  AI adapts based on your performance
                 </div>
               </div>
             )}
@@ -582,24 +655,31 @@ export const CourseDetailPage = () => {
                 <div
                   key={i}
                   className={`flex items-center space-x-3 p-2 rounded ${
-                    i === currentLesson ? 'bg-green-50 border border-green-200' : 
+                    i === currentLesson ? 'bg-purple-50 border border-purple-200' : 
                     i < currentLesson ? 'bg-gray-50' : ''
                   }`}
                 >
                   <div className={`w-6 h-6 rounded-full flex items-center justify-center text-sm ${
-                    i < currentLesson ? 'bg-green-600 text-white' :
-                    i === currentLesson ? 'bg-green-100 text-green-600 border border-green-300' :
+                    i < currentLesson ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white' :
+                    i === currentLesson ? 'bg-purple-100 text-purple-600 border border-purple-300' :
                     'bg-gray-200 text-gray-500'
                   }`}>
                     {i < currentLesson ? '✓' : i + 1}
                   </div>
                   <span className={`text-sm ${
-                    i === currentLesson ? 'font-medium text-green-600' : 'text-gray-700'
+                    i === currentLesson ? 'font-medium text-purple-600' : 'text-gray-700'
                   }`}>
-                    Lesson {i + 1}
+                    AI Lesson {i + 1}
                   </span>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-6 p-4 bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg">
+              <h4 className="font-medium text-gray-900 mb-2">AI Recommendations</h4>
+              <p className="text-sm text-gray-600">
+                Based on your progress, the AI suggests focusing on practice problems after lesson 3.
+              </p>
             </div>
           </div>
         </div>
@@ -621,17 +701,20 @@ export const PracticePage = () => {
     {
       question: "What is 2 + 2?",
       options: ["3", "4", "5", "6"],
-      correct: 1
+      correct: 1,
+      aiHint: "Try breaking this down step by step. Add each number individually."
     },
     {
       question: "What is the square root of 16?",
       options: ["2", "3", "4", "5"],
-      correct: 2
+      correct: 2,
+      aiHint: "Think about which number multiplied by itself equals 16."
     },
     {
       question: "What is 10 × 5?",
       options: ["45", "50", "55", "60"],
-      correct: 1
+      correct: 1,
+      aiHint: "Multiplication is repeated addition. Try adding 10 five times."
     }
   ];
 
@@ -656,18 +739,29 @@ export const PracticePage = () => {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="bg-white rounded-lg shadow-md p-8 max-w-md w-full text-center">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Practice Complete!</h2>
-          <div className="text-4xl font-bold text-green-600 mb-4">
+          <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+            </svg>
+          </div>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">AI Practice Complete!</h2>
+          <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-4">
             {score}/{practiceQuestions.length}
           </div>
-          <p className="text-gray-600 mb-6">
+          <p className="text-gray-600 mb-4">
             You got {score} out of {practiceQuestions.length} questions correct!
           </p>
+          <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-4 rounded-lg mb-6">
+            <p className="text-sm text-gray-700">
+              <strong>AI Analysis:</strong> Based on your performance, you're ready for the next lesson. 
+              The AI has identified areas for improvement and will adjust future content accordingly.
+            </p>
+          </div>
           <Link
             to={`/course/${subject}/${lessonId}`}
-            className="bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700"
+            className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-6 py-2 rounded-md hover:from-purple-700 hover:to-blue-700"
           >
-            Back to Course
+            Continue Learning
           </Link>
         </div>
       </div>
@@ -678,15 +772,19 @@ export const PracticePage = () => {
     <div className="min-h-screen bg-gray-50">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="mb-8">
-          <Link to={`/course/${subject}/${lessonId}`} className="text-green-600 hover:text-green-700 mb-4 inline-block">
+          <Link to={`/course/${subject}/${lessonId}`} className="text-purple-600 hover:text-purple-700 mb-4 inline-block">
             ← Back to Course
           </Link>
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">Practice Questions</h1>
+          <div className="flex items-center space-x-2 mb-4">
+            <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+            <span className="text-sm text-gray-600">AI Practice Mode Active</span>
+          </div>
+          <h1 className="text-3xl font-bold text-gray-900 mb-4">AI-Generated Practice Questions</h1>
           <div className="flex justify-between items-center">
             <span className="text-gray-600">
               Question {currentQuestion + 1} of {practiceQuestions.length}
             </span>
-            <span className="text-green-600 font-medium">Score: {score}</span>
+            <span className="text-purple-600 font-medium">Score: {score}</span>
           </div>
         </div>
 
@@ -695,14 +793,14 @@ export const PracticePage = () => {
             {practiceQuestions[currentQuestion].question}
           </h2>
           
-          <div className="space-y-3 mb-8">
+          <div className="space-y-3 mb-6">
             {practiceQuestions[currentQuestion].options.map((option, index) => (
               <button
                 key={index}
                 onClick={() => handleAnswerSelect(index)}
                 className={`w-full text-left p-4 rounded-lg border-2 transition-colors ${
                   selectedAnswer === index
-                    ? 'border-green-500 bg-green-50'
+                    ? 'border-purple-500 bg-purple-50'
                     : 'border-gray-200 hover:border-gray-300'
                 }`}
               >
@@ -711,16 +809,23 @@ export const PracticePage = () => {
             ))}
           </div>
 
+          <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-4 rounded-lg mb-6">
+            <h3 className="font-medium text-gray-900 mb-2">AI Hint</h3>
+            <p className="text-sm text-gray-700">
+              {practiceQuestions[currentQuestion].aiHint}
+            </p>
+          </div>
+
           <button
             onClick={handleNextQuestion}
             disabled={selectedAnswer === null}
             className={`px-6 py-2 rounded-md font-medium ${
               selectedAnswer !== null
-                ? 'bg-green-600 text-white hover:bg-green-700'
+                ? 'bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-700 hover:to-blue-700'
                 : 'bg-gray-300 text-gray-500 cursor-not-allowed'
             }`}
           >
-            {currentQuestion < practiceQuestions.length - 1 ? 'Next Question' : 'Finish Practice'}
+            {currentQuestion < practiceQuestions.length - 1 ? 'Next Question' : 'Complete Practice'}
           </button>
         </div>
       </div>
@@ -742,7 +847,7 @@ export const LoginModal = () => {
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg p-8 max-w-md w-full mx-4">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold text-gray-900">Sign in to Khan Academy</h2>
+          <h2 className="text-2xl font-bold text-gray-900">Sign in to AlphaTutor.ai</h2>
           <button
             onClick={() => setShowLoginModal(false)}
             className="text-gray-400 hover:text-gray-600"
@@ -760,7 +865,7 @@ export const LoginModal = () => {
               type="email"
               value={formData.email}
               onChange={(e) => setFormData({...formData, email: e.target.value})}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
               required
             />
           </div>
@@ -773,16 +878,16 @@ export const LoginModal = () => {
               type="password"
               value={formData.password}
               onChange={(e) => setFormData({...formData, password: e.target.value})}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
               required
             />
           </div>
           
           <button
             type="submit"
-            className="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 font-medium"
+            className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-2 rounded-md hover:from-purple-700 hover:to-blue-700 font-medium"
           >
-            Sign in
+            Start AI Learning
           </button>
         </form>
         
@@ -794,9 +899,9 @@ export const LoginModal = () => {
                 setShowLoginModal(false);
                 setShowSignupModal(true);
               }}
-              className="text-green-600 hover:text-green-700 font-medium"
+              className="text-purple-600 hover:text-purple-700 font-medium"
             >
-              Sign up
+              Join AlphaTutor.ai
             </button>
           </p>
         </div>
@@ -819,7 +924,7 @@ export const SignupModal = () => {
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg p-8 max-w-md w-full mx-4">
         <div className="flex justify-between items-center mb-6">
-          <h2 className="text-2xl font-bold text-gray-900">Sign up for Khan Academy</h2>
+          <h2 className="text-2xl font-bold text-gray-900">Join AlphaTutor.ai</h2>
           <button
             onClick={() => setShowSignupModal(false)}
             className="text-gray-400 hover:text-gray-600"
@@ -828,16 +933,22 @@ export const SignupModal = () => {
           </button>
         </div>
         
+        <div className="mb-6">
+          <p className="text-sm text-gray-600">
+            Start your AI-powered learning journey with personalized tutoring and adaptive courses.
+          </p>
+        </div>
+        
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1">
-              Name
+              Full Name
             </label>
             <input
               type="text"
               value={formData.name}
               onChange={(e) => setFormData({...formData, name: e.target.value})}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
               required
             />
           </div>
@@ -850,7 +961,7 @@ export const SignupModal = () => {
               type="email"
               value={formData.email}
               onChange={(e) => setFormData({...formData, email: e.target.value})}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
               required
             />
           </div>
@@ -863,16 +974,16 @@ export const SignupModal = () => {
               type="password"
               value={formData.password}
               onChange={(e) => setFormData({...formData, password: e.target.value})}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500"
+              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
               required
             />
           </div>
           
           <button
             type="submit"
-            className="w-full bg-green-600 text-white py-2 rounded-md hover:bg-green-700 font-medium"
+            className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white py-2 rounded-md hover:from-purple-700 hover:to-blue-700 font-medium"
           >
-            Sign up
+            Begin AI Learning
           </button>
         </form>
         
@@ -884,7 +995,7 @@ export const SignupModal = () => {
                 setShowSignupModal(false);
                 setShowLoginModal(true);
               }}
-              className="text-green-600 hover:text-green-700 font-medium"
+              className="text-purple-600 hover:text-purple-700 font-medium"
             >
               Sign in
             </button>
@@ -918,48 +1029,74 @@ export const ProfilePage = () => {
               <h1 className="text-3xl font-bold text-gray-900">{user.name}</h1>
               <p className="text-gray-600">{user.email}</p>
               <div className="flex items-center space-x-4 mt-2">
-                <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm font-medium">
-                  {user.level}
+                <span className="bg-gradient-to-r from-purple-100 to-blue-100 text-purple-800 px-3 py-1 rounded-full text-sm font-medium">
+                  {user.level} Learner
                 </span>
                 <span className="text-gray-600">
-                  🔥 {user.streakDays} day streak
+                  🔥 {user.streakDays} day AI streak
                 </span>
+                <div className="flex items-center space-x-1">
+                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                  <span className="text-sm text-gray-600">AI Active</span>
+                </div>
               </div>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-            <div className="bg-green-50 rounded-lg p-6 text-center">
-              <div className="text-3xl font-bold text-green-600 mb-2">{user.totalPoints}</div>
-              <div className="text-gray-700">Total Points</div>
+            <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg p-6 text-center">
+              <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">{user.totalPoints}</div>
+              <div className="text-gray-700">AI Learning Points</div>
             </div>
-            <div className="bg-blue-50 rounded-lg p-6 text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">15</div>
-              <div className="text-gray-700">Courses Started</div>
+            <div className="bg-gradient-to-r from-green-50 to-teal-50 rounded-lg p-6 text-center">
+              <div className="text-3xl font-bold text-green-600 mb-2">15</div>
+              <div className="text-gray-700">AI Courses Started</div>
             </div>
-            <div className="bg-purple-50 rounded-lg p-6 text-center">
-              <div className="text-3xl font-bold text-purple-600 mb-2">7</div>
-              <div className="text-gray-700">Courses Completed</div>
+            <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-lg p-6 text-center">
+              <div className="text-3xl font-bold text-orange-600 mb-2">7</div>
+              <div className="text-gray-700">AI Courses Mastered</div>
             </div>
           </div>
 
-          <div>
-            <h2 className="text-xl font-semibold text-gray-900 mb-4">Recent Activity</h2>
-            <div className="space-y-3">
-              <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                <span className="text-gray-700">Completed lesson in Basic Algebra</span>
-                <span className="text-gray-500 text-sm ml-auto">2 hours ago</span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 mb-4">Recent AI Activity</h2>
+              <div className="space-y-3">
+                <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                  <span className="text-gray-700">Completed AI Algebra lesson</span>
+                  <span className="text-gray-500 text-sm ml-auto">2 hours ago</span>
+                </div>
+                <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                  <div className="w-2 h-2 bg-green-500 rounded-full"></div>
+                  <span className="text-gray-700">AI generated custom practice set</span>
+                  <span className="text-gray-500 text-sm ml-auto">1 day ago</span>
+                </div>
+                <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                  <span className="text-gray-700">Achieved mastery in AI Biology</span>
+                  <span className="text-gray-500 text-sm ml-auto">3 days ago</span>
+                </div>
               </div>
-              <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                <span className="text-gray-700">Started practice in Geometry</span>
-                <span className="text-gray-500 text-sm ml-auto">1 day ago</span>
+            </div>
+
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 mb-4">AI Learning Insights</h2>
+              <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-6 rounded-lg">
+                <h3 className="font-medium text-gray-900 mb-3">Personalized Recommendations</h3>
+                <ul className="space-y-2 text-sm text-gray-700">
+                  <li>• Focus on geometry proofs for 15 min daily</li>
+                  <li>• Review chemistry equations before Friday</li>
+                  <li>• Try advanced calculus problems next week</li>
+                  <li>• Consider SAT prep course based on your progress</li>
+                </ul>
               </div>
-              <div className="flex items-center space-x-3 p-3 bg-gray-50 rounded-lg">
-                <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                <span className="text-gray-700">Earned mastery in Biology Basics</span>
-                <span className="text-gray-500 text-sm ml-auto">3 days ago</span>
+              
+              <div className="mt-4 bg-gradient-to-r from-green-50 to-teal-50 p-4 rounded-lg">
+                <h4 className="font-medium text-gray-900 mb-2">Learning Pattern Analysis</h4>
+                <p className="text-sm text-gray-700">
+                  Your peak learning time: 7-9 PM. You perform 23% better with visual explanations.
+                </p>
               </div>
             </div>
           </div>
