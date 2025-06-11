@@ -159,18 +159,26 @@ const TutorDogLanding = () => {
             <div className="relative mb-6">
               <div className="text-6xl md:text-8xl font-black relative transform hover:scale-105 transition-all duration-500">
                 <div 
-                  className="bg-gradient-to-r from-orange-300 via-orange-400 to-amber-500 bg-clip-text text-transparent animate-gradient-x drop-shadow-2xl"
+                  className="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 bg-clip-text text-transparent animate-gradient-x drop-shadow-2xl"
                   style={{
-                    textShadow: '0 0 30px rgba(249, 115, 22, 0.5)',
+                    background: 'linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7, #fd79a8, #fdcb6e)',
+                    backgroundSize: '400% 400%',
+                    animation: 'gradient 3s ease infinite',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text',
+                    textShadow: '0 0 30px rgba(255, 107, 107, 0.5)',
                     filter: 'drop-shadow(0 4px 6px rgba(0, 0, 0, 0.7))'
                   }}
                 >
                   TUTOR DOG
                 </div>
-                <div className="absolute -inset-4 bg-gradient-to-r from-orange-500/20 to-amber-500/20 rounded-3xl blur-2xl -z-10 animate-pulse"></div>
+                <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-red-500/20 rounded-3xl blur-2xl -z-10 animate-pulse"></div>
                 <div className="absolute -top-6 -right-6 text-4xl animate-bounce">🎓</div>
                 <div className="absolute -bottom-2 -left-4 text-2xl animate-pulse">📚</div>
                 <div className="absolute top-4 left-1/2 transform -translate-x-1/2 text-xl animate-spin">⭐</div>
+                <div className="absolute -top-4 left-8 text-2xl animate-ping">✨</div>
+                <div className="absolute bottom-2 right-8 text-xl animate-bounce">🚀</div>
               </div>
             </div>
             
