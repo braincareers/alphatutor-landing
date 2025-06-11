@@ -768,16 +768,19 @@ const TutorDogLanding = () => {
                     }`}
                   />
                 </button>
-                {activeTab === index && (
-                  <motion.div
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    className="px-6 pb-6"
-                  >
+                <motion.div
+                  initial={false}
+                  animate={{
+                    height: activeTab === index ? 'auto' : 0,
+                    opacity: activeTab === index ? 1 : 0
+                  }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                  className="overflow-hidden"
+                >
+                  <div className="px-6 pb-6">
                     <p className="text-gray-400 leading-relaxed">{faq.answer}</p>
-                  </motion.div>
-                )}
+                  </div>
+                </motion.div>
               </motion.div>
             ))}
           </div>
