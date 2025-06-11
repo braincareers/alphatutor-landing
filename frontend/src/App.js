@@ -13,7 +13,9 @@ import {
   PracticePage,
   LoginModal,
   SignupModal,
-  ProfilePage
+  ProfilePage,
+  TokenPage,
+  Footer
 } from './components';
 
 // Main App Context for user state management
@@ -75,10 +77,12 @@ function App() {
             <Route path="/computing" element={<ComputingPage />} />
             <Route path="/arts" element={<ArtsPage />} />
             <Route path="/economics" element={<EconomicsPage />} />
+            <Route path="/token" element={<TokenPage />} />
             <Route path="/course/:subject/:courseId" element={<CourseDetailPage />} />
             <Route path="/practice/:subject/:lessonId" element={<PracticePage />} />
             <Route path="/profile" element={<ProfilePage />} />
           </Routes>
+          <Footer />
           
           {showLoginModal && <LoginModal />}
           {showSignupModal && <SignupModal />}
