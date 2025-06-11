@@ -608,11 +608,13 @@ const TutorDogLanding = () => {
             <h3 className="text-2xl font-bold mb-6 text-center text-orange-400">Token Distribution</h3>
             <div className="grid md:grid-cols-2 gap-6">
               {[
-                { category: "Pre-Sale (30%)", description: "Early investor allocation with bonus incentives" },
-                { category: "Liquidity Pool (25%)", description: "DEX liquidity and trading stability" },
-                { category: "Team & Development (15%)", description: "Core team allocation with vesting schedule" },
-                { category: "Community Rewards (20%)", description: "Learn-to-earn and staking rewards" },
-                { category: "Marketing & Partnerships (10%)", description: "Growth and strategic partnerships" }
+                { category: "Presale Sale (30%)", description: "Early Investor allocation with bonus incentives." },
+                { category: "Team & Development (35%)", description: "Core team allocation with vesting schedule & 6-month cliff." },
+                { category: "Community Rewards (10%)", description: "Learn-to-earn & content creators" },
+                { category: "Liquidity & Listings (10%)", description: "DEX liquidity and trading stability" },
+                { category: "Growth Fund (7%)", description: "Partnerships, influencer marketing, and affiliate rewards." },
+                { category: "Airdrops & Rewards (5%)", description: "Community incentives, learn-to-earn, and promotional campaigns." },
+                { category: "Treasury/Advisors (3%)", description: "Reserve for advisors, legal, or protocol improvements." }
               ].map((item, index) => (
                 <div key={index} className="flex items-start gap-4">
                   <Coins className="text-orange-400 mt-1 flex-shrink-0" size={20} />
