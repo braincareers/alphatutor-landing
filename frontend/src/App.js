@@ -4,11 +4,7 @@ import './App.css';
 import { 
   Header, 
   Homepage, 
-  MathPage, 
-  SciencePage, 
-  ComputingPage, 
-  ArtsPage, 
-  EconomicsPage,
+  ComingSoonPage,
   CourseDetailPage,
   PracticePage,
   LoginModal,
@@ -72,11 +68,11 @@ function App() {
           <Header />
           <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route path="/math" element={<MathPage />} />
-            <Route path="/science" element={<SciencePage />} />
-            <Route path="/computing" element={<ComputingPage />} />
-            <Route path="/arts" element={<ArtsPage />} />
-            <Route path="/economics" element={<EconomicsPage />} />
+            <Route path="/math" element={<ComingSoonPage title="Math" />} />
+            <Route path="/science" element={<ComingSoonPage title="Science" />} />
+            <Route path="/computing" element={<ComingSoonPage title="Computing" />} />
+            <Route path="/arts" element={<ComingSoonPage title="Arts & Humanities" />} />
+            <Route path="/economics" element={<ComingSoonPage title="Economics & Test Prep" />} />
             <Route path="/token" element={<TokenPage />} />
             <Route path="/course/:subject/:courseId" element={<CourseDetailPage />} />
             <Route path="/practice/:subject/:lessonId" element={<PracticePage />} />
