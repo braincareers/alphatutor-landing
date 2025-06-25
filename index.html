@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlphaTutor - AI-Powered Learning Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #F0F2F5;
+        }
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+        .chart-container {
+            position: relative;
+            height: 350px;
+            width: 100%;
+            max-width: 600px;
+            margin: auto;
+        }
+        .kpi-box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .kpi-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #1A73E8;
+        }
+        .kpi-label {
+            font-size: 1rem;
+            color: #5f6368;
+            margin-top: 5px;
+        }
+        .flow-arrow {
+            position: relative;
+            width: 100%;
+            height: 30px;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .flow-arrow::after {
+            content: '\2193'; 
+            font-size: 24px;
+            color: #4285F4;
+        }
+        @media (min-width: 768px) {
+            .flow-arrow::after {
+                content: '\279C';
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Color Palette: "Vibrant & Energetic" - Blue: #1A73E8, Teal: #00A19D, Orange: #FF6F61, Yellow: #FFC107 -->
+    <!-- NO SVG or MERMAID JS USED -->
+    
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-bold text-[#1A73E8] mb-2">AlphaTutor</h1>
+            <p class="text-xl md:text-2xl text-gray-600">The Future of AI-Powered Personalized Learning</p>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="md:col-span-2 lg:col-span-3 card">
+                <h2 class="text-2xl font-bold text-gray-800 mb-4">Revolutionizing Education</h2>
+                <p class="text-lg text-gray-700">AlphaTutor is an AI-powered, ultra-personalized learning platform designed to deliver high-quality, on-demand education. It combines structured test preparation for exams like the SAT, ACT, and GRE with a dynamic, user-driven engine that can generate entire micro-courses on any topic. By leveraging advanced AI and a scalable cloud architecture, AlphaTutor adapts its teaching style, pace, and content in real-time to match each learner’s unique profile, making elite-level tutoring accessible and affordable for everyone.</p>
+            </div>
+
+            <div class="card md:col-span-1 lg:col-span-2">
+                <h3 class="text-xl font-semibold mb-4 text-gray-700">EdTech Market Growth Projection</h3>
+                <p class="text-sm text-gray-500 mb-4">The global EdTech market is experiencing exponential growth, driven by the demand for accessible and personalized learning solutions. AlphaTutor is positioned to capture a significant share of this expanding market.</p>
+                <div class="chart-container">
+                    <canvas id="marketGrowthChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card flex flex-col justify-between">
+                 <h3 class="text-xl font-semibold mb-4 text-gray-700">Target Milestones (Year 1)</h3>
+                 <div class="space-y-4">
+                    <div class="kpi-box">
+                        <div class="kpi-value">1M+</div>
+                        <div class="kpi-label">Monthly Active Users</div>
+                    </div>
+                    <div class="kpi-box">
+                        <div class="kpi-value">10%</div>
+                        <div class="kpi-label">Free-to-Premium Conversion</div>
+                    </div>
+                     <div class="kpi-box">
+                        <div class="kpi-value">99.9%</div>
+                        <div class="kpi-label">Platform Uptime</div>
+                    </div>
+                 </div>
+            </div>
+
+            <div class="card">
+                <h3 class="text-xl font-semibold mb-4 text-gray-700">Primary Target Audience</h3>
+                <p class="text-sm text-gray-500 mb-4">AlphaTutor serves a diverse user base, with a primary focus on students preparing for standardized tests and lifelong learners seeking knowledge on specific topics.</p>
+                <div class="chart-container" style="height: 300px;">
+                    <canvas id="audienceChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card md:col-span-2">
+                <h3 class="text-xl font-semibold mb-4 text-gray-700">How It Works: The AI Learning Cycle</h3>
+                <p class="text-sm text-gray-500 mb-4">Our platform creates a continuous, personalized learning loop. Users can enter at any point, whether starting with an assessment, asking a question, or creating a new course from a simple idea.</p>
+                <div class="flex flex-col md:flex-row justify-around items-center text-center space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="flex-1 p-4 bg-blue-50 rounded-lg">
+                        <div class="text-4xl mb-2">1</div>
+                        <h4 class="font-bold text-lg text-blue-800">Prompt or Assess</h4>
+                        <p class="text-sm">User enters a topic to learn or takes a diagnostic test.</p>
+                    </div>
+                    <div class="flow-arrow"></div>
+                    <div class="flex-1 p-4 bg-teal-50 rounded-lg">
+                        <div class="text-4xl mb-2">2</div>
+                        <h4 class="font-bold text-lg text-teal-800">AI Generates & Adapts</h4>
+                        <p class="text-sm">Our engine creates a custom curriculum with lessons and quizzes.</p>
+                    </div>
+                    <div class="flow-arrow"></div>
+                    <div class="flex-1 p-4 bg-orange-50 rounded-lg">
+                        <div class="text-4xl mb-2">3</div>
+                        <h4 class="font-bold text-lg text-orange-800">Engage & Learn</h4>
+                        <p class="text-sm">Student interacts with content, takes quizzes, and asks questions.</p>
+                    </div>
+                     <div class="flow-arrow"></div>
+                    <div class="flex-1 p-4 bg-yellow-50 rounded-lg">
+                        <div class="text-4xl mb-2">4</div>
+                        <h4 class="font-bold text-lg text-yellow-800">Analyze & Refine</h4>
+                        <p class="text-sm">The system analyzes performance and adjusts the learning path in real-time.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card lg:col-span-3">
+                <h3 class="text-xl font-semibold mb-4 text-gray-700">Powered by a Modern Tech Stack</h3>
+                 <p class="text-sm text-gray-500 mb-4">We use a robust, scalable, and modern technology stack to deliver a seamless and powerful learning experience.</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                    <div>
+                        <div class="text-3xl mb-2">🚀</div>
+                        <h4 class="font-bold">Frontend</h4>
+                        <p class="text-sm text-gray-600">React & Next.js</p>
+                    </div>
+                    <div>
+                        <div class="text-3xl mb-2">⚙️</div>
+                        <h4 class="font-bold">Backend</h4>
+                        <p class="text-sm text-gray-600">Node.js/Python</p>
+                    </div>
+                    <div>
+                        <div class="text-3xl mb-2">🧠</div>
+                        <h4 class="font-bold">AI Engine</h4>
+                        <p class="text-sm text-gray-600">GPT-4 & Claude 3.5</p>
+                    </div>
+                    <div>
+                        <div class="text-3xl mb-2">💾</div>
+                        <h4 class="font-bold">Databases</h4>
+                        <p class="text-sm text-gray-600">PostgreSQL & Pinecone</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card md:col-span-2 lg:col-span-1">
+                <h3 class="text-xl font-semibold mb-4 text-gray-700">Revenue Streams</h4>
+                <p class="text-sm text-gray-500 mb-4">A diversified monetization strategy ensures sustainability and growth, while keeping core learning features accessible.</p>
+                <div class="chart-container" style="height: 300px;">
+                    <canvas id="monetizationChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card md:col-span-2">
+                <h3 class="text-xl font-semibold mb-4 text-gray-700">Our Competitive Advantage</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <span class="text-blue-500 text-xl mr-3">✔</span>
+                        <div>
+                            <h4 class="font-bold">Hyper-Personalization</h4>
+                            <p class="text-sm text-gray-600">AI-driven adaptive learning paths and dynamic content generation cater to individual user needs, a significant improvement over static content libraries.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-blue-500 text-xl mr-3">✔</span>
+                        <div>
+                            <h4 class="font-bold">Scalability & Affordability</h4>
+                            <p class="text-sm text-gray-600">Our serverless architecture and automation-first approach enable us to serve millions of users at a fraction of the traditional cost.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-blue-500 text-xl mr-3">✔</span>
+                        <div>
+                            <h4 class="font-bold">On-Demand Course Creation</h4>
+                            <p class="text-sm text-gray-600">Unlike any competitor, users can generate entire micro-courses on demand, moving beyond pre-defined curricula to explore any topic of interest instantly.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+        </main>
+
+        <footer class="text-center mt-12 py-4 border-t border-gray-300">
+            <p class="text-sm text-gray-500">&copy; 2024 AlphaTutor. All Rights Reserved. Revolutionizing Education, One Learner at a Time.</p>
+        </footer>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Helper function to wrap long labels
+            function formatLabel(str, maxwidth){
+                const sections = [];
+                const words = str.split(' ');
+                let temp = '';
+                words.forEach(function(item, index){
+                    if( (temp + ' ' + item).trim().length > maxwidth ){
+                        sections.push(temp.trim());
+                        temp = '';
+                    }
+                    temp += ' ' + item;
+                });
+                sections.push(temp.trim());
+                return sections;
+            }
+
+            // Shared tooltip configuration
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                    return label.join(' ');
+                } else {
+                    return label;
+                }
+            };
+            
+            // Market Growth Chart
+            const marketCtx = document.getElementById('marketGrowthChart').getContext('2d');
+            new Chart(marketCtx, {
+                type: 'line',
+                data: {
+                    labels: ['2023', '2024', '2025', '2026', '2027', '2028'],
+                    datasets: [{
+                        label: 'Global EdTech Market Size (in Billions USD)',
+                        data: [520, 580, 650, 730, 820, 950],
+                        backgroundColor: 'rgba(26, 115, 232, 0.2)',
+                        borderColor: 'rgba(26, 115, 232, 1)',
+                        borderWidth: 2,
+                        pointBackgroundColor: 'rgba(26, 115, 232, 1)',
+                        pointRadius: 4,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            ticks: {
+                                callback: function(value, index, values) {
+                                    return '$' + value + 'B';
+                                }
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: tooltipTitleCallback,
+                                label: function(context) {
+                                    return 'Market Size: $' + context.parsed.y + ' Billion';
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Audience Doughnut Chart
+            const audienceCtx = document.getElementById('audienceChart').getContext('2d');
+            const audienceLabels = ['High School Students (SAT/ACT)', 'Graduate School Applicants (GRE/GMAT)', 'Professional Certification Seekers', 'Lifelong Learners & Hobbyists'];
+            new Chart(audienceCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: audienceLabels.map(label => formatLabel(label, 15)),
+                    datasets: [{
+                        data: [40, 25, 20, 15],
+                        backgroundColor: ['#1A73E8', '#00A19D', '#FF6F61', '#FFC107'],
+                        hoverOffset: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                        },
+                        tooltip: {
+                            callbacks: {
+                                title: tooltipTitleCallback
+                            }
+                        }
+                    }
+                }
+            });
+            
+            // Monetization Doughnut Chart
+            const monetizationCtx = document.getElementById('monetizationChart').getContext('2d');
+            new Chart(monetizationCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Premium Subscriptions', 'Enterprise Licensing', 'Pay-per-course', 'API & Partnerships'],
+                    datasets: [{
+                        label: 'Revenue Streams',
+                        data: [50, 25, 15, 10],
+                        backgroundColor: [
+                            '#1A73E8',
+                            '#00A19D',
+                            '#FF6F61',
+                            '#FFC107'
+                        ],
+                        borderColor: '#FFFFFF',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom'
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
