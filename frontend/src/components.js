@@ -406,44 +406,108 @@ export const Footer = () => {
   );
 };
 
+// Coming Soon Page Component
+export const ComingSoonPage = ({ title }) => {
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
+      <div className="text-center max-w-2xl mx-auto px-6">
+        <div className="mb-8">
+          <div className="w-32 h-32 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-8 animate-pulse">
+            <span className="text-white font-bold text-5xl">α</span>
+          </div>
+          
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-4">
+            Coming Soon
+          </h1>
+          
+          <h2 className="text-2xl md:text-3xl font-semibold text-purple-600 mb-6">
+            {title}
+          </h2>
+          
+          <p className="text-xl text-gray-600 mb-8 max-w-lg mx-auto">
+            We're working hard to bring you an amazing AI-powered learning experience for {title}. 
+            Stay tuned for revolutionary personalized education!
+          </p>
+        </div>
+
+        <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">
+            Get notified when {title} launches
+          </h3>
+          
+          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+            />
+            <button className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:from-purple-700 hover:to-blue-700 font-medium transition-all duration-200">
+              Notify Me
+            </button>
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <Link 
+            to="/" 
+            className="inline-flex items-center space-x-2 text-purple-600 hover:text-purple-700 font-medium"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            <span>Back to Homepage</span>
+          </Link>
+          
+          <div className="flex justify-center space-x-6 text-sm text-gray-500">
+            <span>🚀 AI-Powered Learning</span>
+            <span>📚 Personalized Curriculum</span>
+            <span>⚡ Real-time Adaptation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 // Homepage Component
 export const Homepage = () => {
   const { user } = useContext(AppContext);
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
+      {/* Hero Section - Revolutionizing Education */}
       <section className="bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-5xl font-bold mb-6">
-                AI-Powered Ultra-Personalized Learning
+                Revolutionizing Education
               </h1>
               <p className="text-xl mb-8 opacity-90">
-                AlphaTutor.ai combines real-time cognitive adaptation with advanced AI to deliver personalized education. Master anything, anytime with automated micro-course generation and structured test prep.
+                AlphaTutor is an AI-powered, ultra-personalized learning platform designed to deliver high-quality, on-demand education. 
+                It combines structured test preparation for exams like the SAT, ACT, and GRE with a dynamic, user-driven engine that can 
+                generate entire micro-courses on any topic.
+              </p>
+              <p className="text-lg mb-8 opacity-80">
+                By leveraging advanced AI and a scalable cloud architecture, AlphaTutor adapts its teaching style, pace, and content 
+                in real-time to match each learner's unique profile, making elite-level tutoring accessible and affordable for everyone.
               </p>
               <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                <button className="bg-white text-purple-600 px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
-                  {user ? 'Continue Your Journey' : 'Start AI Tutoring'}
+                <button 
+                  onClick={() => document.getElementById('how-it-works').scrollIntoView({ behavior: 'smooth' })}
+                  className="bg-white text-purple-600 px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors"
+                >
+                  See How It Works
                 </button>
                 <button className="border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-purple-600 transition-colors">
-                  Explore Test Prep
+                  Join the Revolution
                 </button>
-              </div>
-              <div className="mt-8 flex items-center space-x-6 text-sm opacity-80">
-                <div className="flex items-center space-x-2">
-                  <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-                  <span>AI Tutor Online</span>
-                </div>
-                <div>SAT • GRE • LSAT Prep</div>
-                <div>Custom Courses</div>
               </div>
             </div>
             <div>
               <img 
                 src="https://images.unsplash.com/photo-1632830049084-308fd151d8ae" 
-                alt="AI-powered learning" 
+                alt="AI-powered learning revolution" 
                 className="rounded-lg shadow-xl"
               />
             </div>
@@ -451,74 +515,335 @@ export const Homepage = () => {
         </div>
       </section>
 
-      {/* AI Features Section */}
+      {/* EdTech Market Growth */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold mb-8 text-gray-900">
+            EdTech Market Growth Projection
+          </h2>
+          <p className="text-xl text-gray-700 max-w-4xl mx-auto mb-12">
+            The global EdTech market is experiencing exponential growth, driven by the demand for accessible and personalized learning solutions. 
+            AlphaTutor is positioned to capture a significant share of this expanding market.
+          </p>
+          
+          {/* Market Growth Visual */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-gradient-to-r from-green-50 to-emerald-50 p-8 rounded-lg">
+              <div className="text-4xl font-bold text-green-600 mb-2">$350B</div>
+              <div className="text-gray-700">Market Size by 2025</div>
+            </div>
+            <div className="bg-gradient-to-r from-blue-50 to-cyan-50 p-8 rounded-lg">
+              <div className="text-4xl font-bold text-blue-600 mb-2">16.3%</div>
+              <div className="text-gray-700">Annual Growth Rate</div>
+            </div>
+            <div className="bg-gradient-to-r from-purple-50 to-pink-50 p-8 rounded-lg">
+              <div className="text-4xl font-bold text-purple-600 mb-2">2B+</div>
+              <div className="text-gray-700">Potential Learners</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Target Milestones */}
+      <section className="py-16 bg-gradient-to-r from-purple-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            Target Milestones (Year 1)
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white rounded-lg shadow-md p-8 text-center">
+              <div className="text-5xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-4">1M+</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Monthly Active Users</h3>
+              <p className="text-gray-600">Building a massive community of AI-powered learners</p>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-8 text-center">
+              <div className="text-5xl font-bold bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent mb-4">10%</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Free-to-Premium Conversion</h3>
+              <p className="text-gray-600">Converting users with exceptional AI tutoring value</p>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-8 text-center">
+              <div className="text-5xl font-bold bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent mb-4">99.9%</div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Platform Uptime</h3>
+              <p className="text-gray-600">Ensuring reliable access to AI-powered education</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Primary Target Audience */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
-            Powered by Advanced AI Technology
+            Primary Target Audience
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <p className="text-xl text-center text-gray-700 max-w-4xl mx-auto mb-12">
+            AlphaTutor serves a diverse user base, with a primary focus on students preparing for standardized tests and lifelong learners seeking knowledge on specific topics.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="text-center p-6">
-              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Real-Time Adaptation</h3>
-              <p className="text-gray-600">AI continuously adapts to your learning style and pace</p>
+              <h3 className="text-lg font-semibold mb-2">High School Students</h3>
+              <p className="text-gray-600 text-sm">SAT, ACT, AP exam preparation with personalized AI guidance</p>
             </div>
             <div className="text-center p-6">
-              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-teal-500 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Automated Course Generation</h3>
-              <p className="text-gray-600">Instantly create micro-courses on any topic you want to learn</p>
+              <h3 className="text-lg font-semibold mb-2">College Students</h3>
+              <p className="text-gray-600 text-sm">GRE, LSAT, MCAT prep and supplementary course material</p>
+            </div>
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2-2v2m8 0V6a2 2 0 00-2 2H10a2 2 0 00-2-2V4" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Working Professionals</h3>
+              <p className="text-gray-600 text-sm">Skill development and continuous learning for career advancement</p>
             </div>
             <div className="text-center p-6">
               <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                </svg>
+              </div>
+              <h3 className="text-lg font-semibold mb-2">Lifelong Learners</h3>
+              <p className="text-gray-600 text-sm">Custom micro-courses on any topic of personal interest</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works: The AI Learning Cycle */}
+      <section id="how-it-works" className="py-16 bg-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            How It Works: The AI Learning Cycle
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="text-center">
+              <div className="relative">
+                <div className="w-20 h-20 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <span className="text-white font-bold text-2xl">1</span>
+                </div>
+                <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-purple-300 to-blue-300"></div>
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Prompt or Assess</h3>
+              <p className="text-gray-600">User enters a topic to learn or takes a diagnostic test.</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="relative">
+                <div className="w-20 h-20 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <span className="text-white font-bold text-2xl">2</span>
+                </div>
+                <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-blue-300 to-green-300"></div>
+              </div>
+              <h3 className="text-xl font-semibold mb-3">AI Generates & Adapts</h3>
+              <p className="text-gray-600">Our engine creates a custom curriculum with lessons and quizzes.</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="relative">
+                <div className="w-20 h-20 bg-gradient-to-r from-green-600 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <span className="text-white font-bold text-2xl">3</span>
+                </div>
+                <div className="hidden lg:block absolute top-10 left-full w-full h-0.5 bg-gradient-to-r from-green-300 to-orange-300"></div>
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Engage & Learn</h3>
+              <p className="text-gray-600">Student interacts with content, takes quizzes, and asks questions.</p>
+            </div>
+            
+            <div className="text-center">
+              <div className="w-20 h-20 bg-gradient-to-r from-orange-600 to-red-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span className="text-white font-bold text-2xl">4</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-3">Analyze & Refine</h3>
+              <p className="text-gray-600">The system analyzes performance and adjusts the learning path in real-time.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Tech Stack */}
+      <section className="py-16 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
+            Powered by a Modern Tech Stack
+          </h2>
+          
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center p-6 bg-gray-50 rounded-lg">
+              <div className="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                </svg>
+              </div>
+              <h3 className="font-semibold text-gray-900">Frontend</h3>
+              <p className="text-sm text-gray-600">React & Next.js</p>
+            </div>
+            
+            <div className="text-center p-6 bg-gray-50 rounded-lg">
+              <div className="w-16 h-16 bg-green-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                </svg>
+              </div>
+              <h3 className="font-semibold text-gray-900">Backend</h3>
+              <p className="text-sm text-gray-600">Node.js/Python</p>
+            </div>
+            
+            <div className="text-center p-6 bg-gray-50 rounded-lg">
+              <div className="w-16 h-16 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <h3 className="font-semibold text-gray-900">AI Engine</h3>
+              <p className="text-sm text-gray-600">GPT-4 & Claude 3.5</p>
+            </div>
+            
+            <div className="text-center p-6 bg-gray-50 rounded-lg">
+              <div className="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <svg className="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+                </svg>
+              </div>
+              <h3 className="font-semibold text-gray-900">Databases</h3>
+              <p className="text-sm text-gray-600">PostgreSQL & Pinecone</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Revenue Streams */}
+      <section className="py-16 bg-gradient-to-r from-purple-50 to-blue-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-3xl font-bold mb-8 text-gray-900">
+            Revenue Streams
+          </h2>
+          <p className="text-xl text-gray-700 max-w-4xl mx-auto mb-12">
+            A diversified monetization strategy ensures sustainability and growth, while keeping core learning features accessible.
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+            <div className="bg-white rounded-lg shadow-md p-8">
+              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Freemium Model</h3>
+              <p className="text-gray-600">Basic AI tutoring free, premium features for advanced personalization</p>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-md p-8">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Institutional Licensing</h3>
+              <p className="text-gray-600">Schools and universities can license our AI platform for their students</p>
+            </div>
+            
+            <div className="bg-white rounded-lg shadow-md p-8">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Test Prep Excellence</h3>
-              <p className="text-gray-600">Structured preparation for SAT, GRE, LSAT and more</p>
+              <h3 className="text-xl font-semibold mb-4">Certification Programs</h3>
+              <p className="text-gray-600">Verified credentials and certificates for completed courses and achievements</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Subjects Section */}
-      <section className="py-16">
+      {/* Competitive Advantage */}
+      <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12 text-gray-900">
-            Learn Any Subject with AI Guidance
+            Our Competitive Advantage
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {subjects.map((subject) => (
-              <SubjectCard key={subject.id} subject={subject} />
-            ))}
+          
+          <div className="space-y-8">
+            <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg p-8">
+              <div className="flex items-start space-x-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Hyper-Personalization</h3>
+                  <p className="text-lg text-gray-700">
+                    AI-driven adaptive learning paths and dynamic content generation cater to individual user needs, 
+                    a significant improvement over static content libraries.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-lg p-8">
+              <div className="flex items-start space-x-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-600 to-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Scalability & Affordability</h3>
+                  <p className="text-lg text-gray-700">
+                    Our serverless architecture and automation-first approach enable us to serve millions of users 
+                    at a fraction of the traditional cost.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div className="bg-gradient-to-r from-orange-50 to-red-50 rounded-lg p-8">
+              <div className="flex items-start space-x-6">
+                <div className="w-16 h-16 bg-gradient-to-r from-orange-600 to-red-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                </div>
+                <div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">On-Demand Course Creation</h3>
+                  <p className="text-lg text-gray-700">
+                    Unlike any competitor, users can generate entire micro-courses on demand, moving beyond pre-defined 
+                    curricula to explore any topic of interest instantly.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="bg-gradient-to-r from-purple-50 to-blue-50 py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            <div>
-              <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">2M+</div>
-              <div className="text-gray-700">Students Powered by AI</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">95%</div>
-              <div className="text-gray-700">Test Score Improvement</div>
-            </div>
-            <div>
-              <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent mb-2">24/7</div>
-              <div className="text-gray-700">AI Tutor Availability</div>
-            </div>
+      {/* CTA Section */}
+      <section className="py-16 bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-700 text-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <h2 className="text-4xl font-bold mb-6">Ready to Revolutionize Your Learning?</h2>
+          <p className="text-xl mb-8 opacity-90">
+            Join thousands of learners who are already experiencing the power of AI-driven personalized education.
+          </p>
+          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center">
+            <button className="bg-white text-purple-600 px-8 py-3 rounded-md font-semibold hover:bg-gray-100 transition-colors">
+              Start Learning Now
+            </button>
+            <button className="border-2 border-white text-white px-8 py-3 rounded-md font-semibold hover:bg-white hover:text-purple-600 transition-colors">
+              View Demo
+            </button>
           </div>
         </div>
       </section>
