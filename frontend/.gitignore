@@ -18,6 +18,15 @@
 .env.test.local
 .env.production.local
 
+# logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# deployment packages
+*.tar.gz
+*.zip
+
+# IDE
+.vscode/
+.idea/
