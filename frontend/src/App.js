@@ -823,7 +823,7 @@ const TutorDogLanding = () => {
               </p>
               <div className="flex gap-4">
                 <a
-                  href="https://twitter.com/tutordogtoken"
+                  href="https://x.com/tutordogtoken"
                   className="w-10 h-10 bg-gray-800 hover:bg-orange-500 rounded-full flex items-center justify-center transition-all duration-300"
                 >
                   <Twitter size={18} />
@@ -849,7 +849,7 @@ const TutorDogLanding = () => {
             <div>
               <h5 className="text-white font-semibold mb-4">Community</h5>
               <div className="space-y-2">
-                <a href="https://twitter.com/tutordogtoken" className="block text-gray-400 hover:text-orange-400 transition-colors">Twitter</a>
+                <a href="https://x.com/tutordogtoken" className="block text-gray-400 hover:text-orange-400 transition-colors">Twitter</a>
                 <a href="https://t.me/tutordogtoken" className="block text-gray-400 hover:text-orange-400 transition-colors">Telegram</a>
                 <a href="#" className="block text-gray-400 hover:text-orange-400 transition-colors">Discord</a>
               </div>
@@ -859,7 +859,7 @@ const TutorDogLanding = () => {
           <div className="border-t border-gray-800 pt-8 text-center">
             <p className="text-gray-400">
               © 2025 Tutor Dog Token. All rights reserved. Built with education and innovation in mind.<br/>
-              <span className="text-orange-400">Contact: research@alphatutor.ai</span>
+              <span className="text-orange-400">Contact: contact@alphatutor.ai</span>
             </p>
           </div>
         </div>
