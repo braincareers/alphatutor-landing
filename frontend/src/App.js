@@ -94,7 +94,7 @@ const TutorDogLanding = () => {
         </motion.div>
         
         <div className="relative z-10 text-center px-4 max-w-7xl mx-auto">
-          {/* Tutor Dog Logo */}
+          {/* Tutor Dog Token Logo */}
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
@@ -102,8 +102,8 @@ const TutorDogLanding = () => {
             className="mb-8"
           >
             <img
-              src="/images/tdog%20image1.png"
-              alt="AlphaTutor Logo"
+              src="/images/tdog-image2.png"
+              alt="Tutor Dog Token Logo"
               className="w-48 h-48 mx-auto rounded-full shadow-2xl object cover"
             />
           </motion.div>
