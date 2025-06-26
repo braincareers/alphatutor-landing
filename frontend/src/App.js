@@ -101,53 +101,11 @@ const TutorDogLanding = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="mb-8"
           >
-            <div className="w-48 h-48 mx-auto mb-8 relative">
-              {/* Using the actual Tutor Dog logo provided by user */}
-              <div className="w-full h-full rounded-full bg-gradient-to-br from-orange-400 to-amber-600 p-2 shadow-2xl">
-                <div className="w-full h-full rounded-full bg-black flex items-center justify-center relative overflow-hidden">
-                  {/* Orange circular background */}
-                  <div className="absolute inset-4 rounded-full bg-gradient-to-br from-orange-400 to-amber-500"></div>
-                  
-                  {/* Dog character */}
-                  <div className="relative z-10 w-32 h-32">
-                    {/* Dog ears */}
-                    <div className="absolute top-8 left-4 w-8 h-12 bg-gradient-to-b from-orange-300 to-orange-400 rounded-full transform -rotate-12"></div>
-                    <div className="absolute top-8 right-4 w-8 h-12 bg-gradient-to-b from-orange-300 to-orange-400 rounded-full transform rotate-12"></div>
-                    
-                    {/* Graduation cap */}
-                    <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-20 h-6 bg-gray-800 rounded-lg"></div>
-                    <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-4 bg-gray-700 rounded-lg"></div>
-                    <div className="absolute top-1 right-2 w-1 h-6 bg-gray-600"></div>
-                    <div className="absolute top-1 right-1 w-3 h-3 bg-yellow-400 rounded-full"></div>
-                    
-                    {/* Dog face */}
-                    <div className="absolute top-12 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-gradient-to-b from-orange-300 to-orange-400 rounded-full">
-                      {/* Eyes */}
-                      <div className="absolute top-4 left-3 w-2 h-2 bg-black rounded-full"></div>
-                      <div className="absolute top-4 right-3 w-2 h-2 bg-black rounded-full"></div>
-                      
-                      {/* Nose */}
-                      <div className="absolute top-7 left-1/2 transform -translate-x-1/2 w-1.5 h-2 bg-black rounded-full"></div>
-                      
-                      {/* Mouth */}
-                      <div className="absolute top-9 left-1/2 transform -translate-x-1/2 w-6 h-2 border-b-2 border-black rounded-full"></div>
-                    </div>
-                    
-                    {/* Collar with T medal */}
-                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-12 h-3 bg-gray-800 rounded-full"></div>
-                    <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-b from-yellow-400 to-yellow-500 rounded-full border-2 border-yellow-600 flex items-center justify-center">
-                      <span className="text-xs font-bold text-yellow-900">T</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* TDOG text below logo */}
-              <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-center">
-                <div className="text-2xl font-black text-orange-400 tracking-wider">TDOG</div>
-                <div className="text-sm font-semibold text-gray-300">TUTOR DOG TOKEN</div>
-              </div>
-            </div>
+            <img
+              src="/images/tdog%20image1.png"
+              alt="AlphaTutor Logo"
+              className="w-48 h-48 mx-auto rounded-full shadow-2xl object cover"
+            />
           </motion.div>
           
           {/* Enhanced Hero Text with Image-Style Headlines */}
@@ -176,7 +134,6 @@ const TutorDogLanding = () => {
                 <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-red-500/20 rounded-3xl blur-2xl -z-10 animate-pulse"></div>
                 <div className="absolute -top-6 -right-6 text-4xl animate-bounce">🎓</div>
                 <div className="absolute -bottom-2 -left-4 text-2xl animate-pulse">📚</div>
-                <div className="absolute top-4 left-1/2 transform -translate-x-1/2 text-xl animate-spin">⭐</div>
                 <div className="absolute -top-4 left-8 text-2xl animate-ping">✨</div>
                 <div className="absolute bottom-2 right-8 text-xl animate-bounce">🚀</div>
               </div>
