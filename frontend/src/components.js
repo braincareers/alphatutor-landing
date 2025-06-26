@@ -308,10 +308,10 @@ export const Footer = () => {
             <div className="mb-6">
               <h3 className="text-lg font-semibold mb-3">Contact Support</h3>
               <a 
-                href="mailto:Support@AlphaTutor.ai" 
+                href="mailto:contact@AlphaTutor.ai" 
                 className="text-purple-400 hover:text-purple-300 font-medium"
               >
-                Support@AlphaTutor.ai
+                contact@AlphaTutor.ai
               </a>
             </div>
           </div>
@@ -335,7 +335,7 @@ export const Footer = () => {
             <div className="flex space-x-4">
               {/* X (Twitter) */}
               <a 
-                href="https://x.com/alphatutor_ai" 
+                href="https://x.com/tutordogtoken" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-white transition-colors"
