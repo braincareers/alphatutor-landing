@@ -214,7 +214,7 @@ const TutorDogLanding = () => {
               </div>
 
               <div className="text-center text-sm text-gray-400">
-                Powered by <span className="text-orange-400 font-semibold">Web3Payments</span>
+                Powered by <span className="text-orange-400 font-semibold">---</span>
               </div>
             </div>
           </motion.div>
@@ -595,7 +595,7 @@ const TutorDogLanding = () => {
       </section>
 
       {/* Roadmap Section */}
-      <section className="py-20 px-4 relative">
+      <section id="roadmap" className="py-20 px-4 relative">
         <div 
           className="absolute inset-0 opacity-5"
           style={{
@@ -717,15 +717,19 @@ const TutorDogLanding = () => {
               </div>
             </motion.div>
 
-            <motion.button
+            <motion.a
               variants={fadeInUp}
+              href="/whitepaper.pdf"
+              Download
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-orange-500/25 flex items-center gap-2 mx-auto"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <Download size={20} />
-              Download Whitepaper (Coming Soon)
-            </motion.button>
+              Download Whitepaper
+            </motion.a>
           </motion.div>
         </div>
       </section>
@@ -849,8 +853,8 @@ const TutorDogLanding = () => {
             <div>
               <h5 className="text-white font-semibold mb-4">Community</h5>
               <div className="space-y-2">
-                <a href="https://x.com/tutordogtoken" className="block text-gray-400 hover:text-orange-400 transition-colors">Twitter</a>
-                <a href="https://t.me/tutordogtoken" className="block text-gray-400 hover:text-orange-400 transition-colors">Telegram</a>
+                <a href="https://x.com/tutordogtoken" className="block text-gray-400 hover:text-orange-400 transition-colors">X</a>
+                <a href="#" className="block text-gray-400 hover:text-orange-400 transition-colors">Telegram</a>
                 <a href="#" className="block text-gray-400 hover:text-orange-400 transition-colors">Discord</a>
               </div>
             </div>
@@ -859,7 +863,7 @@ const TutorDogLanding = () => {
           <div className="border-t border-gray-800 pt-8 text-center">
             <p className="text-gray-400">
               © 2025 Tutor Dog Token. All rights reserved. Built with education and innovation in mind.<br/>
-              <span className="text-orange-400">Contact: contact@alphatutor.ai</span>
+              <span className="text-orange-400">contact@alphatutor.ai</span>
             </p>
           </div>
         </div>
